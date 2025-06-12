@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             resetearFormulario();
             await cargarPacientes();
-        } catch (error) { if (error instanceof Error) showToast('Error: ' + error.message, 'error'); }
+        } catch (error) { if (error instanceof Error) showToast('Paciente ya registrado', 'error'); }
     });
 
     await cargarPacientes();
