@@ -12,9 +12,8 @@ export async function crearSerie(data: Omit<Serie, 'id'>): Promise<Serie> {
     ...data
   };
 
-  // Lógica de Supabase para insertar la nueva serie
   const { data: serieCreada, error } = await supabase
-    .from('Series') // Nombre EXACTO de tu tabla en Supabase
+    .from('Series') 
     .insert(nuevaSerieConId)
     .select()
     .single();
@@ -28,13 +27,48 @@ export async function crearSerie(data: Omit<Serie, 'id'>): Promise<Serie> {
 }
 
 export async function obtenerTodasLasSeries(): Promise<Serie[]> {
-  // Lógica de Supabase para seleccionar todas las series
   const { data, error } = await supabase
     .from('Series')
     .select('*');
 
   if (error) {
     console.error("Error al obtener las series:", error);
+    throw new Error("No se pudieron obtener las series.");
+  }
+
+  return data || [];
+}
+
+export async function actualizarSerie(id: string, data: Partial<Omit<Serie, 'id' | 'instructorId'>>): Promise<Serie> {
+    const { data: serieActualizada, error } = await supabase
+      .from('Series')
+      .update(data)
+      .eq('id', id)
+      .select()
+      .single();
+  
+    if (error) {
+      console.error("Error al actualizar la serie:", error);
+      throw new Error("No se pudo actualizar la serie o no fue encontrada.");
+    }
+  
+    return serieActualizada;
+}
+
+export async function obtenerSeriePorId(id: string): Promise<Serie> {
+  const { data, error } = await supabase.from('Series').select('*').eq('id', id).single();
+  if (error) throw new Error('Serie no encontrada.');
+  return data;
+}
+
+export async function obtenerSeriesPorInstructor(instructorId: string): Promise<Serie[]> {
+  const { data, error } = await supabase
+    .from('Series')
+    .select('*')
+    .eq('instructorId', instructorId); 
+
+  if (error) {
+    console.error("Error al obtener las series por instructor:", error);
     throw new Error("No se pudieron obtener las series.");
   }
 

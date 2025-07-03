@@ -1,18 +1,20 @@
 import { supabase } from '../config/supabaseClient';
 import { Instructor } from '../models/instructor';
+import { validarContraseña } from '../utils/validacion';
 import bcrypt from 'bcrypt';
-
 
 export async function registrarInstructor(
   nombre: string,
   correo: string,
   contraseña: string
 ): Promise<Omit<Instructor, 'contraseña'>> {
+  validarContraseña(contraseña);
+  
   const { data: existente } = await supabase
-    .from('Instructor') // Usa el nombre EXACTO de tu tabla en Supabase
+    .from('Instructor') 
     .select('id')
-    .eq('correo', correo) // eq() es como un 'WHERE correo = ...'
-    .single(); // .single() espera un solo resultado o ninguno
+    .eq('correo', correo) 
+    .single(); 
 
   if (existente) {
     throw new Error('El correo ya está registrado');
@@ -28,7 +30,7 @@ export async function registrarInstructor(
   const { data, error } = await supabase
     .from('Instructor')
     .insert(nuevoInstructor)
-    .select('id, nombre, correo') // Selecciona solo los campos seguros para devolver
+    .select('id, nombre, correo') 
     .single();
 
   if (error) {
