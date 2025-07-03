@@ -52,7 +52,6 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
 /* Estilos para el modal */
 .modal {
   display: none; /* Invisible por defecto */
@@ -106,14 +105,6 @@ body, html {
 
 .btn-ok-error:hover {
   background-color: #c82333; 
-=======
-.input-reducido {
-  max-width: 300px;
-  width: 100%;
-  margin-bottom: 0.75rem;
-  padding: 0.5rem;
-  font-size: 1rem;
->>>>>>> 70f3a1fb2e3e426d44c3dc27d679d5a40fac935b
 }
 
 /* Estilos para el panel del instructor */
@@ -357,159 +348,5 @@ body, html {
 }
 
 .toast.error {
-<<<<<<< HEAD
     background-color: #dc3545; 
 }
-=======
-    background-color: #dc3545; /* Rojo error */
-}
-/* --- ESTILOS PARA BOTÓN SECUNDARIO --- */
-.btn-secundario {
-  background-color: transparent;
-  color: #555; /* Un color de texto más neutro */
-  border: 2px solid #ccc; /* Borde sutil */
-  padding: calc(0.8rem - 2px); /* Ajustamos el padding para compensar el borde */
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none; /* Para que el enlace 'Ver detalles' no esté subrayado */
-  display: inline-flex; /* Para alinear el texto verticalmente */
-  align-items: center;
-  justify-content: center;
-  line-height: 1.2;
-}
-
-.btn-secundario:hover {
-  background-color: #f0f0f0; /* Un color de fondo suave al pasar el mouse */
-  border-color: #bbb;
-  color: #333;
-}
-
-.controles-sesion {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.contenedor-imagen-postura {
-  width: 100%;
-  max-width: 500px; /* Ancho máximo para la imagen */
-  height: 350px;    /* Altura fija para todas las imágenes */
-  margin: 1rem auto; /* Centra el contenedor */
-  border-radius: 8px;
-  overflow: hidden; /* Oculta las partes de la imagen que se salgan */
-  background-color: #f0f0f0; /* Fondo mientras carga o por si falla */
-}
-
-.imagen-postura {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* La propiedad clave: escala la imagen para cubrir el espacio sin deformarla */
-  object-position: center; /* Centra la imagen */
-}
-
-
-/* Responsive Adjustments */
-
-@media (max-width: 768px) {
-  .contenedor-izquierdo {
-    width: 100%;
-    min-width: auto;
-    padding: 1rem;
-  }
-
-  .contenedor-formulario {
-    max-width: 90%;
-    padding: 1rem;
-  }
-
-  .fila-doble {
-    flex-direction: column;
-  }
-
-  .btn-grande-centro {
-    max-width: 100%;
-  }
-
-  .contenedor-imagen-postura {
-    height: auto;
-  }
-
-  .imagen-postura {
-    height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .titulo,
-  .titulo-logo {
-    font-size: 2.5rem;
-  }
-
-  .marca {
-    font-size: 1.2rem;
-  }
-
-  .btn-primario,
-  .btn-secundario {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .panel {
-    flex-direction: column;
-  }
-
-  .menu-lateral {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .contenido-panel {
-    padding: 1rem;
-  }
-}
-
-
-/* --- ESTILOS PARA MEJORAS DE FORMULARIO DE CONTRASEÑA --- */
-
-/* Contenedor para el campo de contraseña y el ícono de visibilidad */
-.campo-password-contenedor {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%; 
-}
-
-/* El campo de contraseña ahora ocupa casi todo el espacio, dejando sitio para el ícono */
-.campo-password-contenedor input {
-  width: 100%;
-  padding-right: 45px; /* Dejamos espacio para el ícono a la derecha */
-}
-
-/* Estilo para el ícono de "ojo" */
-.toggle-password {
-  position: absolute;
-  right: 10px; /* Posicionamos el ícono dentro del campo */
-  cursor: pointer;
-  color: var(--color-secundario);
-  user-select: none; /* Evita que el texto del ícono se seleccione */
-}
-
-/* Estilo para el texto de las reglas de la contraseña */
-.password-rules {
-  font-size: 0.8rem;
-  color: #bdc3c7; /* Un color suave que no distraiga */
-  padding-left: 5px;
-  list-style-type: none; /* Quitamos los puntos de la lista */
-  margin: -10px 0 0 0; /* Ajustamos el espaciado */
-}
-.password-rules li {
-  padding-bottom: 4px;
-}
->>>>>>> 70f3a1fb2e3e426d44c3dc27d679d5a40fac935b
